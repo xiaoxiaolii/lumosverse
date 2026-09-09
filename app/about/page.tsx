@@ -1,4 +1,46 @@
-import {Header} from '../page';
-import {Footer,Contact,Traction,Experiences} from '../sections';
-export const metadata={title:'About — Lumosverse'};
-export default function About(){return <><Header/><main><section className="detail-hero wrap"><p className="eyebrow">ABOUT LUMOSVERSE</p><h1>Meaningful stories.<br/><em>Fewer boundaries.</em></h1><p className="intro">Lumosverse is a creator-first content distribution platform, built on a simple belief: every story deserves its audience.</p></section><section className="section wrap about-statement"><p className="eyebrow">WHY WE EXIST</p><h2>The future of storytelling isn't just about creating more.</h2><p className="intro">As the barriers to creation continue to fall, discovery becomes more important than ever. Meaningful stories deserve a better chance to travel across audiences, communities, and borders.</p><p className="intro">We rethink content distribution around a more direct relationship between the people who create stories and the people who value them.</p></section><Traction/><Experiences/><Contact/></main><Footer/></>}
+import { Header } from '../page';
+import { Footer, Contact, Traction, Experiences } from '../sections';
+export const metadata = {
+  title: 'About — Lumosverse',
+  description:
+    'Lumosverse is a creator-first content distribution platform built to help meaningful stories reach the right audiences.',
+  alternates: { canonical: '/about' },
+};
+export default function About() {
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="detail-hero wrap">
+          <p className="eyebrow">ABOUT LUMOSVERSE</p>
+          <h1>
+            Meaningful stories.
+            <br />
+            <em>Fewer boundaries.</em>
+          </h1>
+          <p className="intro">
+            Lumosverse is a creator-first content distribution platform, built
+            on a simple belief: every story deserves its audience.
+          </p>
+        </section>
+        <section className="section wrap about-statement">
+          <p className="eyebrow">WHY WE EXIST</p>
+          <h2>The future of storytelling isn't just about creating more.</h2>
+          <p className="intro">
+            As the barriers to creation continue to fall, discovery becomes more
+            important than ever. Meaningful stories deserve a better chance to
+            travel across audiences, communities, and borders.
+          </p>
+          <p className="intro">
+            We rethink content distribution around a more direct relationship
+            between the people who create stories and the people who value them.
+          </p>
+        </section>
+        <Traction />
+        <Experiences />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
+}
