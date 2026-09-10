@@ -140,10 +140,7 @@ export default function Cinematic() {
       />
       <div className="cinema-blur" aria-hidden="true" />
       <header className="cinema-nav">
-        <BrandLogo
-          className="cinema-logo animate-blur-fade-up"
-          whiteBackground
-        />
+        <BrandLogo className="cinema-logo animate-blur-fade-up" />
         <nav aria-label="Main navigation" className="cinema-desktop-nav">
           {links.map(([label, href], i) => (
             <Link
