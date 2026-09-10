@@ -1,18 +1,18 @@
-'use client';
-
-import Link from 'next/link';
+/* oxlint-disable next/no-html-link-for-pages -- Sites requires full document navigation for reliable cross-page links. */
 import Image from 'next/image';
 
 export default function BrandLogo({ className = 'logo' }: { className?: string }) {
   return (
-    <Link
+    <a
       href="/"
-      prefetch={false}
       className={className}
       aria-label="Return to Lumosverse home"
-      onClick={(event) => {
-        event.preventDefault();
-        window.location.assign('/');
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        width: className.includes('cinema-logo')
+          ? 'min(220px, 43vw)'
+          : 'min(212px, 42vw)',
       }}
     >
       <Image
@@ -25,6 +25,6 @@ export default function BrandLogo({ className = 'logo' }: { className?: string }
         sizes="(max-width: 800px) 185px, 220px"
         priority
       />
-    </Link>
+    </a>
   );
 }
