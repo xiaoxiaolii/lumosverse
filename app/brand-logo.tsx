@@ -19,8 +19,8 @@ export default function BrandLogo({ className = 'logo' }: { className?: string }
         className="brand-wordmark"
         src="/brand/lumosverse-wordmark-light.png"
         alt="Lumosverse"
-        width={1400}
-        height={269}
+        width={440}
+        height={84}
         sizes="(max-width: 800px) 185px, 220px"
         priority
       />
