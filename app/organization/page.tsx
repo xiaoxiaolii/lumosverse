@@ -3,7 +3,6 @@ import { Header } from '../page';
 import { Footer } from '../sections';
 
 const linkedinUrl = 'https://www.linkedin.com/company/143783898/';
-const githubUrl = 'https://github.com/xiaoxiaolii/lumosverse';
 
 export const metadata: Metadata = {
   title: 'Lumosverse Organization — Company Information',
@@ -23,7 +22,7 @@ const organizationData = {
   email: 'info@lumosverse.io',
   description:
     'A creator-first content distribution platform helping meaningful stories reach the audiences who value them.',
-  sameAs: [linkedinUrl, githubUrl],
+  sameAs: [linkedinUrl],
 };
 
 export default function Organization() {
@@ -49,7 +48,6 @@ export default function Organization() {
           <div><dt>Website</dt><dd><a href="https://lumosverse.io">lumosverse.io ↗</a></dd></div>
           <div><dt>Contact</dt><dd><a href="mailto:info@lumosverse.io">info@lumosverse.io ↗</a></dd></div>
           <div><dt>LinkedIn</dt><dd><a href={linkedinUrl} target="_blank" rel="noopener noreferrer">Company page ↗</a></dd></div>
-          <div><dt>GitHub</dt><dd><a href={githubUrl} target="_blank" rel="noopener noreferrer">Lumosverse project ↗</a></dd></div>
         </dl>
       </main>
       <Footer />
