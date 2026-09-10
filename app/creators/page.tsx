@@ -1,10 +1,17 @@
 import { Header } from '../page';
 import { Footer, Contact, pillars } from '../sections';
+import Link from 'next/link';
 export const metadata = {
   title: 'Lumosverse for Creators — Find Your Audience',
   description:
     'Find your audience, build your community, and keep more of the value you create with Lumosverse.',
   alternates: { canonical: '/creators' },
+  openGraph: {
+    title: 'Lumosverse for Creators — Find Your Audience',
+    description:
+      'Find your audience, build your community, and keep more of the value you create with Lumosverse.',
+    url: '/creators',
+  },
 };
 export default function Creators() {
   return (
@@ -48,9 +55,9 @@ export default function Creators() {
             Exclusive content, digital ownership, and participatory experiences
             open up new ways for people to connect with the stories they love.
           </p>
-          <a className="text-link underlined" href="/how-it-works">
+          <Link className="text-link underlined" href="/how-it-works">
             Explore how it works ↗
-          </a>
+          </Link>
         </section>
         <Contact />
       </main>

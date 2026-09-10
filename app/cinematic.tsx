@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import {
   ArrowUpRight,
   ArrowRight,
@@ -77,7 +77,7 @@ const scenes = [
     cta: 'Explore Our Story',
     href: '/about',
     secondary: 'Get in Touch',
-    secondaryHref: 'mailto:info@lumosverse.io',
+    secondaryHref: 'mailto:info@lumosverse.io?subject=Lumosverse%20Inquiry',
   },
 ];
 const links = [
@@ -87,7 +87,8 @@ const links = [
 ];
 export default function Cinematic() {
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(true);
   const [failed, setFailed] = useState(false);
   const [menu, setMenu] = useState(false);
   const video = useRef<HTMLVideoElement>(null);
@@ -97,6 +98,7 @@ export default function Cinematic() {
     if (!el) return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const sync = () => {
+      setReducedMotion(reduced.matches);
       if (reduced.matches) {
         el.pause();
         setPaused(true);
@@ -110,6 +112,16 @@ export default function Cinematic() {
   }, []);
   const move = (direction: number) =>
     setCurrent((i) => (i + direction + scenes.length) % scenes.length);
+  const handleArrowKey = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      move(-1);
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      move(1);
+    }
+  };
   const toggle = () => {
     const el = video.current;
     if (!el) return;
@@ -128,11 +140,12 @@ export default function Cinematic() {
         ref={video}
         className="cinema-video"
         src={videoUrl}
-        autoPlay
+        poster="/brand/hero-poster.jpg"
+        autoPlay={!reducedMotion}
         muted
         loop
         playsInline
-        preload="auto"
+        preload={reducedMotion ? 'none' : 'metadata'}
         aria-hidden="true"
         onError={() => setFailed(true)}
         onPause={() => setPaused(true)}
@@ -155,7 +168,7 @@ export default function Cinematic() {
         </nav>
         <div className="cinema-nav-actions">
           <a
-            href="mailto:info@lumosverse.io"
+            href="mailto:info@lumosverse.io?subject=Lumosverse%20Inquiry"
             className="liquid-glass cinema-pill nav-contact animate-blur-fade-up"
             style={{ animationDelay: '350ms' }}
           >
@@ -180,7 +193,7 @@ export default function Cinematic() {
                     <ArrowUpRight size={17} />
                   </Link>
                 ))}
-                <a href="mailto:info@lumosverse.io">
+                <a href="mailto:info@lumosverse.io?subject=Lumosverse%20Inquiry">
                   Get in Touch
                   <ArrowUpRight size={17} />
                 </a>
@@ -275,6 +288,7 @@ export default function Cinematic() {
               <button
                 className="cinema-pill liquid-glass"
                 onClick={() => move(-1)}
+                onKeyDown={handleArrowKey}
                 aria-label="Previous chapter"
               >
                 <ChevronLeft size={18} />
@@ -283,6 +297,7 @@ export default function Cinematic() {
               <button
                 className="cinema-pill liquid-glass"
                 onClick={() => move(1)}
+                onKeyDown={handleArrowKey}
                 aria-label="Next chapter"
               >
                 <span>Next</span>
@@ -297,8 +312,10 @@ export default function Cinematic() {
               <button
                 key={s.label}
                 onClick={() => setCurrent(i)}
+                onKeyDown={handleArrowKey}
                 className={current === i ? 'selected' : ''}
                 aria-pressed={current === i}
+                aria-label={`Show chapter ${i + 1}: ${s.label}`}
               >
                 <span>0{i + 1}</span>
                 {s.label}

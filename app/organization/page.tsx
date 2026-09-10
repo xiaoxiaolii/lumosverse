@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description:
     'Official company information and profiles for Lumosverse, a creator-first story distribution platform.',
   alternates: { canonical: '/organization' },
+  openGraph: {
+    title: 'Lumosverse Organization — Company Information',
+    description:
+      'Official company information and profiles for Lumosverse, a creator-first story distribution platform.',
+    url: '/organization',
+  },
 };
 
 const organizationData = {
@@ -46,7 +52,7 @@ export default function Organization() {
           <div><dt>Organization</dt><dd>Lumosverse Inc.</dd></div>
           <div><dt>Focus</dt><dd>Story distribution · Creator community · Audience connection</dd></div>
           <div><dt>Website</dt><dd><a href="https://lumosverse.io">lumosverse.io ↗</a></dd></div>
-          <div><dt>Contact</dt><dd><a href="mailto:info@lumosverse.io">info@lumosverse.io ↗</a></dd></div>
+          <div><dt>Contact</dt><dd><a href="mailto:info@lumosverse.io?subject=Lumosverse%20Inquiry">info@lumosverse.io ↗</a></dd></div>
           <div><dt>LinkedIn</dt><dd><a href={linkedinUrl} target="_blank" rel="noopener noreferrer">Company page ↗</a></dd></div>
         </dl>
       </main>

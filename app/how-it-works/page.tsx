@@ -21,6 +21,12 @@ export const metadata = {
   description:
     'See how Lumosverse connects stories with audiences through open distribution, digital ownership, and direct creator rewards.',
   alternates: { canonical: '/how-it-works' },
+  openGraph: {
+    title: 'How Lumosverse Works — Story Distribution and Community',
+    description:
+      'See how Lumosverse connects stories with audiences through open distribution, digital ownership, and direct creator rewards.',
+    url: '/how-it-works',
+  },
 };
 export default function How() {
   return (

@@ -5,6 +5,12 @@ export const metadata = {
   description:
     'Lumosverse is a creator-first content distribution platform built to help meaningful stories reach the right audiences.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Lumosverse — Every Story Deserves Its Audience',
+    description:
+      'Lumosverse is a creator-first content distribution platform built to help meaningful stories reach the right audiences.',
+    url: '/about',
+  },
 };
 export default function About() {
   return (
@@ -25,7 +31,7 @@ export default function About() {
         </section>
         <section className="section wrap about-statement">
           <p className="eyebrow">WHY WE EXIST</p>
-          <h2>The future of storytelling isn't just about creating more.</h2>
+          <h2>The future of storytelling isn&apos;t just about creating more.</h2>
           <p className="intro">
             As the barriers to creation continue to fall, discovery becomes more
             important than ever. Meaningful stories deserve a better chance to
