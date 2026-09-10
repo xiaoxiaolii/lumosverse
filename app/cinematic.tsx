@@ -52,8 +52,7 @@ const scenes = [
         <br />A world of possibilities.
       </>
     ),
-    description:
-      'Find your audience. Build your community. Keep more value. A more direct relationship between the people who create stories and the people who value them.',
+    description: '',
     meta: ['Find your audience', 'Build your community', 'Keep more value'],
     cta: 'See How It Works',
     href: '/how-it-works',
@@ -69,8 +68,7 @@ const scenes = [
         Made real, together.
       </>
     ),
-    description:
-      'Monthly uploads doubled to 10K+ in the first year. New sign-ups tripled to 20K within six months. A different model for content distribution, built and tested.',
+    description: '',
     meta: [
       '10K+ monthly uploads',
       '20K new sign-ups',

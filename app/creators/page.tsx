@@ -23,6 +23,11 @@ export default function Creators() {
         </section>
         <section className="section wrap">
           <p className="eyebrow">BUILT AROUND YOU</p>
+          <p className="intro relocated-copy">
+            Find your audience. Build your community. Keep more value. A more
+            direct relationship between the people who create stories and the
+            people who value them.
+          </p>
           <div className="detail-rows">
             {pillars.map(([title, copy], i) => (
               <article key={title}>
