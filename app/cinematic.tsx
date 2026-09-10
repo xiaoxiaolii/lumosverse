@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import {
   ArrowUpRight,
@@ -153,17 +152,15 @@ export default function Cinematic() {
       />
       <div className="cinema-blur" aria-hidden="true" />
       <header className="cinema-nav">
-        <BrandLogo className="cinema-logo animate-blur-fade-up" />
+        <BrandLogo className="cinema-logo" />
         <nav aria-label="Main navigation" className="cinema-desktop-nav">
-          {links.map(([label, href], i) => (
-            <Link
+          {links.map(([label, href]) => (
+            <a
               key={href}
               href={href}
-              className="animate-blur-fade-up"
-              style={{ animationDelay: `${100 + i * 50}ms` }}
             >
               {label}
-            </Link>
+            </a>
           ))}
         </nav>
         <div className="cinema-nav-actions">
@@ -188,10 +185,10 @@ export default function Cinematic() {
               </SheetDescription>
               <nav aria-label="Mobile navigation">
                 {links.map(([label, href]) => (
-                  <Link key={href} href={href} onClick={() => setMenu(false)}>
+                  <a key={href} href={href} onClick={() => setMenu(false)}>
                     {label}
                     <ArrowUpRight size={17} />
-                  </Link>
+                  </a>
                 ))}
                 <a href="mailto:info@lumosverse.io?subject=Lumosverse%20Inquiry">
                   Get in Touch

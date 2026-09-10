@@ -21,6 +21,7 @@ export default function BrandLogo({ className = 'logo' }: { className?: string }
         alt="Lumosverse"
         width={440}
         height={84}
+        style={{ display: 'block', width: '100%', height: 'auto' }}
         sizes="(max-width: 800px) 185px, 220px"
         priority
       />
