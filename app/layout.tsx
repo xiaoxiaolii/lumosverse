@@ -19,6 +19,21 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      {
+        url: '/brand/favicon-light.png',
+        media: '(prefers-color-scheme: light)',
+        type: 'image/png',
+      },
+      {
+        url: '/brand/favicon-dark.png',
+        media: '(prefers-color-scheme: dark)',
+        type: 'image/png',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     type: 'website',
     url: 'https://lumosverse.io',
