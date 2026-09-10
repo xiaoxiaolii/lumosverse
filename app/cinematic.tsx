@@ -20,6 +20,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from '@/components/ui/sheet';
+import LogoMark from './logo-mark';
 const videoUrl =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4';
 const scenes = [
@@ -141,13 +142,13 @@ export default function Cinematic() {
       />
       <div className="cinema-blur" aria-hidden="true" />
       <header className="cinema-nav">
-        <a
+        <Link
           className="cinema-logo animate-blur-fade-up"
           href="/"
           aria-label="Lumosverse home"
         >
-          <span>✳</span>LUMOSVERSE
-        </a>
+          <LogoMark />LUMOSVERSE
+        </Link>
         <nav aria-label="Main navigation" className="cinema-desktop-nav">
           {links.map(([label, href], i) => (
             <Link
