@@ -17,7 +17,7 @@ const steps = [
   ],
 ];
 export const metadata = {
-  title: 'How It Works — Lumosverse',
+  title: 'How Lumosverse Works — Story Distribution and Community',
   description:
     'See how Lumosverse connects stories with audiences through open distribution, digital ownership, and direct creator rewards.',
   alternates: { canonical: '/how-it-works' },

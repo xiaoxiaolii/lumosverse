@@ -1,7 +1,7 @@
 import { Header } from '../page';
 import { Footer, Contact, pillars } from '../sections';
 export const metadata = {
-  title: 'For Creators — Lumosverse',
+  title: 'Lumosverse for Creators — Find Your Audience',
   description:
     'Find your audience, build your community, and keep more of the value you create with Lumosverse.',
   alternates: { canonical: '/creators' },

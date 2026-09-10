@@ -9,7 +9,7 @@ const inter = Inter({
 });
 export const metadata: Metadata = {
   metadataBase: new URL('https://lumosverse.io'),
-  title: 'Lumosverse — Every story deserves its audience.',
+  title: 'Lumosverse — Creator-First Story Distribution',
   description:
     'A creator-first content distribution platform. Connect with the audiences who value your stories and keep more of the value you create.',
   alternates: {
