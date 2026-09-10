@@ -1,12 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function BrandLogo({ className = 'logo' }: { className?: string }) {
+export default function BrandLogo({
+  className = 'logo',
+  whiteBackground = false,
+}: {
+  className?: string;
+  whiteBackground?: boolean;
+}) {
   return (
-    <Link href="/" className={className} aria-label="Lumosverse home">
+    <Link
+      href="/"
+      className={`${className}${whiteBackground ? ' brand-logo-white' : ''}`}
+      aria-label="Return to Lumosverse home"
+    >
       <Image
         className="brand-wordmark"
-        src="/brand/lumosverse-wordmark-light.png"
+        src={whiteBackground
+          ? '/brand/lumosverse-wordmark-dark.png'
+          : '/brand/lumosverse-wordmark-light.png'}
         alt=""
         width={1400}
         height={269}
