@@ -86,8 +86,8 @@ const links = [
 ];
 export default function Cinematic() {
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(true);
+  const [paused, setPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const [failed, setFailed] = useState(false);
   const [menu, setMenu] = useState(false);
   const video = useRef<HTMLVideoElement>(null);
@@ -144,7 +144,7 @@ export default function Cinematic() {
         muted
         loop
         playsInline
-        preload={reducedMotion ? 'none' : 'metadata'}
+        preload="auto"
         aria-hidden="true"
         onError={() => setFailed(true)}
         onPause={() => setPaused(true)}
