@@ -41,7 +41,7 @@ export default function How() {
             to <em>your people.</em>
           </h1>
           <p className="intro">
-            Creator → Story → Lumosverse → Audience → Superfan → Creator. A
+            Creator → Story → Lumosverse → Audience → Superfan → Creator — a
             cycle that brings the value of a story back to the person who
             created it.
           </p>
